@@ -1,0 +1,21 @@
+;;; Module description. The first sentence (up to the first dot) is the
+;;  summary. All following sentences form the complete description.
+;;  You can use <strong>HTML</strong>.
+
+;; Usage of this module:
+;; > load("Example1.ils")
+;; > Example1->myFunction("filename")
+
+;;; Package definition. This comment is mandatory for the script to work
+;;  correctly.
+Example1 = let( ()
+    ;;; This documents the function "myFunction".
+    ;;  @param filename This is the first parameter.
+    defun( myFunction (filename)
+      ...
+    )
+
+    ;;; Exported functions. This comment is mandatory as well.
+    list(nil
+      'myFunction myFunction)
+) ; let

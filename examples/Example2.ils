@@ -1,0 +1,62 @@
+;;; Module description. The first sentence (up to the first dot) is the
+;;  summary. All following sentences form the complete description.
+;;  You can use <strong>HTML</strong>.
+
+;; This module provides a class.
+
+;; Usage of this module:
+;; > load("Example2.ils")
+;; > obj = makeInstance('Example2)
+;; How to call a method:
+;; > obj->method1(filename)
+;; How to call a static method (a method that does not need an object):
+;; > Example2->myFunction(filename)
+
+;;; Class definition. This comment is mandatory for the script to work
+;;  correctly.
+defclass( Example2
+  () ; superclass
+  (
+    ;;; This documents a class variable.
+    (state)
+
+    ; The following slot will later become a method.
+    (method1)
+  )
+) ; defclass
+
+;;; This is a global function.
+;;  @param foo Important parameter.
+defun( myGlobalFunc (foo)
+  ...
+)
+
+;;; Package definition. This comment is mandatory for the script to work
+;;  correctly.
+Example2 = let( ()
+    defmethod( initializeInstance ((obj Example2))
+      ;;; This method does something useful.
+      ;;  @param filename Name of the file to modify.
+      obj->method1 = lambda( (filename)
+        ...
+      )
+    )
+
+    ;;; This documents the function "myFunction".
+    ;;  @param filename This is the first parameter.
+    defun( myFunction (filename)
+      ...
+    )
+
+    ;;; This demonstrates the support for function definitions using
+    ;;  <i>procedure</i>.
+    ;;  @param filename This is a useful parameter.
+    procedure( myProcedure (filename)
+      ...
+    )
+
+    ;;; Exported functions. This comment is mandatory as well.
+    list(nil
+      'myFunction  myFunction
+      'myProcedure myProcedure)
+) ; let

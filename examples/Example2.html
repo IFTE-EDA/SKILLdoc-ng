@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Example2</title>
+    <style type="text/css">
+    <!--
+/* BEGIN RESET
+
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 2.8.2r1
+*/
+html {
+    color: #000;
+    background: #FFF;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td {
+    margin: 0;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset,img {
+    border: 0;
+}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup {
+    font-style: inherit;
+    font-weight: inherit;
+}
+del,ins {
+    text-decoration: none;
+}
+li {
+    list-style: bullet;
+    margin-left: 20px;
+}
+caption,th {
+    text-align: left;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    font-weight: bold;
+}
+q:before,q:after {
+    content: '';
+}
+abbr,acronym {
+    border: 0;
+    font-variant: normal;
+}
+sup {
+    vertical-align: baseline;
+}
+sub {
+    vertical-align: baseline;
+}
+legend {
+    color: #000;
+}
+input,button,textarea,select,optgroup,option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+input,button,textarea,select {
+  font-size:100%;
+}
+/* END RESET */
+
+body {
+    margin-left: 1em;
+    margin-right: 1em;
+    font-family: arial, helvetica, geneva, sans-serif;
+    background-color: #ffffff; margin: 0px;
+}
+
+code, tt { font-family: monospace; }
+
+body, p, td, th { font-size: .95em; line-height: 1.2em;}
+
+p, ul { margin: 10px 0 0 10px;}
+
+strong { font-weight: bold;}
+
+em { font-style: italic;}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0 0 20px 0;
+}
+h2, h3, h4 { margin: 15px 0 10px 0; }
+h2 { font-size: 1.25em; }
+h3 { font-size: 1.15em; }
+h4 { font-size: 1.06em; }
+
+a:link { font-weight: bold; color: #004080; text-decoration: none; }
+a:visited { font-weight: bold; color: #006699; text-decoration: none; }
+a:link:hover { text-decoration: underline; }
+
+hr {
+    color:#cccccc;
+    background: #00007f;
+    height: 1px;
+}
+
+blockquote { margin-left: 3em; }
+
+ul { list-style-type: disc; }
+
+p.name {
+    font-family: "Andale Mono", monospace;
+    padding-top: 1em;
+}
+
+pre.example {
+    background-color: rgb(245, 245, 245);
+    border: 1px solid silver;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    font-family: "Andale Mono", monospace;
+    font-size: .85em;
+}
+
+pre {
+    background-color: rgb(245, 245, 245);
+    border: 1px solid silver;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    overflow: auto;
+    font-family: "Andale Mono", monospace;
+}
+
+
+table.index { border: 1px #00007f; }
+table.index td { text-align: left; vertical-align: top; }
+
+#container {
+    margin-left: 1em;
+    margin-right: 1em;
+    background-color: #f0f0f0;
+}
+
+#product {
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+    background-color: #ffffff;
+}
+
+#product big {
+    font-size: 2em;
+}
+
+#main {
+    background-color: #f0f0f0;
+    border-left: 2px solid #cccccc;
+}
+
+#content {
+    /*margin-left: 18em;*/
+    padding: 1em;
+    border-left: 2px solid #cccccc;
+    border-right: 2px solid #cccccc;
+    background-color: #ffffff;
+}
+
+#about {
+    clear: both;
+    padding: 5px;
+    border-top: 2px solid #cccccc;
+    background-color: #ffffff;
+}
+
+@media print {
+    body {
+        font: 12pt "Times New Roman", "TimeNR", Times, serif;
+    }
+    a { font-weight: bold; color: #004080; text-decoration: underline; }
+
+    #main {
+        background-color: #ffffff;
+        border-left: 0px;
+    }
+
+    #container {
+        margin-left: 2%;
+        margin-right: 2%;
+        background-color: #ffffff;
+    }
+
+    #content {
+        padding: 1em;
+        background-color: #ffffff;
+    }
+
+    #navigation {
+        display: none;
+    }
+    pre.example {
+        font-family: "Andale Mono", monospace;
+        font-size: 10pt;
+        page-break-inside: avoid;
+    }
+}
+
+table.module_list {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+    border-collapse: collapse;
+}
+table.module_list td {
+    border-width: 1px;
+    padding: 3px;
+    border-style: solid;
+    border-color: #cccccc;
+}
+table.module_list td.name { background-color: #f0f0f0; ; min-width: 200px; }
+table.module_list td.summary { width: 100%; }
+
+
+table.function_list {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc;
+    border-collapse: collapse;
+}
+table.function_list td {
+    border-width: 1px;
+    padding: 3px;
+    border-style: solid;
+    border-color: #cccccc;
+}
+table.function_list td.name { background-color: #f0f0f0; ; min-width: 200px; }
+table.function_list td.indented_name { min-width: 200px; padding-left: 20px; }
+table.function_list td.summary { width: 100%; }
+
+dl.table dt, dl.function dt {border-top: 1px solid #ccc; padding-top: 1em;}
+dl.table dd, dl.function dd {padding-bottom: 1em; margin: 10px 0 0 20px;}
+dl.table h3, dl.function h3 {font-size: .95em;}
+dl.methods {margin: 0 0 0 20px;}
+
+/* stop sublists from having initial vertical space */
+ul ul { margin-top: 0px; }
+ol ul { margin-top: 0px; }
+ol ol { margin-top: 0px; }
+ul ol { margin-top: 0px; }
+
+/* styles for prettification of source */
+.keyword {font-weight: bold; color: #6666AA; }
+.number  { color: #AA6666; }
+.string  { color: #8888AA; }
+.comment { color: #666600; }
+.prepro { color: #006666; }
+.global { color: #800080; }
+-->
+</style>
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+  <div id="product_logo"></div>
+  <div id="product_name"><big><b></b></big></div>
+  <div id="product_description"></div>
+</div> <!-- id="product" -->
+
+<div id="main">
+
+<div id="content">
+
+<h1>Module <code>Example2</code></h1>
+
+
+  
+<p>Module description.</p>
+  
+  
+<p>The first sentence (up to the first dot) is the summary. All following sentences form the complete description. You can use <strong>HTML</strong>.</p>
+  
+  
+  
+
+
+
+<h2><a href="#Classes">Classes</a></h2>
+<table class="function_list">
+    
+    <tr>
+      <td class="name" nowrap="nowrap"><a href="#class-Example2">Example2</a></td>
+      <td class="summary">Class definition.</td>
+    </tr>
+    
+    <tr>
+      <td class="indented_name" nowrap="nowrap"><a href="#method-Example2-method1">obj-&gt;method1</a></td>
+      <td class="summary">This method does something useful.</td>
+    </tr>
+    
+    
+</table>
+
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+    
+    
+    <tr>
+      <td class="name" nowrap="nowrap"><a href="#Example2-myFunction">Example2->myFunction(filename)</a></td>
+      <td class="summary">This documents the function "myFunction".</td>
+    </tr>
+    
+    <tr>
+      <td class="name" nowrap="nowrap"><a href="#Example2-myProcedure">Example2->myProcedure(filename)</a></td>
+      <td class="summary">This demonstrates the support for function definitions using <i>procedure</i>.</td>
+    </tr>
+    
+    
+    
+    <tr>
+    <td class="name" nowrap="nowrap"><a href="#myGlobalFunc">myGlobalFunc(foo)</a></td>
+      <td class="summary">This is a global function.</td>
+    </tr>
+    
+</table>
+
+
+<br/>
+<br/>
+
+
+    <h2><a name="Classes"></a>Classes</h2>
+    
+    <dl class="function">
+      <dt>
+        <a name="class-Example2"></a>
+        <strong>Example2</strong>
+      </dt>
+      <dd>
+      Class definition. This comment is mandatory for the script to work correctly.
+
+      
+      <h3>Slots:</h3>
+      <ul>
+        
+        <li><code><em>state</em></code>: This documents a class variable. </li>
+        
+      </ul>
+      
+
+      
+      <h3>Methods:</h3>
+      <dl class="methods">
+        
+        <dt>
+          <a name="method-Example2-method1"></a>
+          <strong>obj-&gt;method1(filename)</strong>
+        </dt>
+        <dd>
+          This method does something useful. 
+
+          
+          <h4>Parameters:</h4>
+          
+          <ul>
+            <li><code><em>filename</em></code>: Name of the file to modify.</li>
+          </ul>
+          
+          
+        </dd>
+        
+      </dl>
+      
+      </dd>
+    </dl>
+    
+
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+    
+    
+    <dl class="function">
+    <dt>
+    <a name="Example2-myFunction"></a>
+    <strong>Example2->myFunction(filename)</strong>
+    </dt>
+    <dd>
+    This documents the function "myFunction". 
+
+    
+    <h3>Parameters:</h3>
+    
+    <ul>
+       <li><code><em>filename</em></code>: This is the first parameter.</li>
+    </ul>
+    
+    
+    </dd>
+    </dl>
+    
+    <dl class="function">
+    <dt>
+    <a name="Example2-myProcedure"></a>
+    <strong>Example2->myProcedure(filename)</strong>
+    </dt>
+    <dd>
+    This demonstrates the support for function definitions using <i>procedure</i>. 
+
+    
+    <h3>Parameters:</h3>
+    
+    <ul>
+       <li><code><em>filename</em></code>: This is a useful parameter.</li>
+    </ul>
+    
+    
+    </dd>
+    </dl>
+    
+    
+    
+    <dl class="function">
+    <dt>
+    <a name="myGlobalFunc"></a>
+    <strong>myGlobalFunc(foo)</strong>
+    </dt>
+    <dd>
+    This is a global function. 
+
+    
+    <h3>Parameters:</h3>
+    
+    <ul>
+       <li><code><em>foo</em></code>: Important parameter.</li>
+    </ul>
+    
+    
+    </dd>
+    </dl>
+    
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+</div> <!-- id="container" -->
+</body>
+</html>
